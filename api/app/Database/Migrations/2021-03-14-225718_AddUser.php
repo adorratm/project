@@ -32,6 +32,18 @@ class AddUser extends Migration
         'null' => false,
         'unique' => true
       ],
+      'phone' => [
+        'type' => 'VARCHAR',
+        'constraint' => '19',
+        'null' => false,
+        'unique' => true
+      ],
+      'isAdmin' => [
+        'type' => 'TINYINT',
+        'constraint' => 1,
+        'null' => false,
+        'default' => 0
+      ],
       'updated_at' => [
         'type' => 'datetime',
         'null' => true,

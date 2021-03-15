@@ -3,28 +3,24 @@
     "name": "inspire",
     "path": "/inspire",
     "component": "C:\\\\Users\\\\adorr\\\\Desktop\\\\project\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_0d8a04c8"
+    "chunkName": "pages/inspire"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\adorr\\\\Desktop\\\\project\\\\pages\\\\login.vue",
-    "chunkName": "pages/login",
-    "_name": "_69c645aa"
+    "chunkName": "pages/login"
   },
   {
     "name": "register",
     "path": "/register",
     "component": "C:\\\\Users\\\\adorr\\\\Desktop\\\\project\\\\pages\\\\register.vue",
-    "chunkName": "pages/register",
-    "_name": "_323ea7d1"
+    "chunkName": "pages/register"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\adorr\\\\Desktop\\\\project\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_01753a14"
+    "chunkName": "pages/index"
   }
 ]

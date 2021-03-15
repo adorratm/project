@@ -12,6 +12,8 @@ class UserModel extends Model
     'name',
     'email',
     'password',
+    'phone',
+    'isAdmin'
   ];
   protected $updatedField = 'updated_at';
 

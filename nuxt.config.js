@@ -19,15 +19,17 @@ export default {
   head: {
     titleTemplate: "%s - Digitus",
     title: process.env.npm_package_name || "Digitus",
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    meta: [
-      {
+    link: [ {
+      rel: "icon",
+      type: "image/x-icon",
+      href: "/favicon.ico"
+    } ],
+    meta: [ {
         charset: "utf-8"
       },
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, minimal-ui"
+        content: "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, minimal-ui"
       },
       {
         hid: "description",
@@ -44,8 +46,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    {
+  plugins: [ {
       src: "~/plugins/vee-validate"
     },
     {
@@ -87,8 +88,7 @@ export default {
     mode: "no-cors",
     headers: {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers":
-        "Origin, Content-Type, X-Auth-Token, Authorization",
+      "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Authorization",
       "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
       "Access-Control-Allow-Credentials": true,
       "Content-type": "application/json"
@@ -103,8 +103,7 @@ export default {
     },
     meta: {
       charset: "utf-8",
-      viewport:
-        "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, minimal-ui",
+      viewport: "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, minimal-ui",
       nativeUI: true,
       lang: "tr",
       author: "EMRE KILIÇ",
@@ -117,7 +116,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ["~/assets/variables.scss"]
+    customVariables: [ "~/assets/variables.scss" ]
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -126,21 +125,62 @@ export default {
    */
   build: {
     extractCSS: true,
-    transpile: ["vee-validate/dist/rules", "vee-validate/dist/locale"],
+    transpile: [ "vee-validate/dist/rules", "vee-validate/dist/locale" ],
     splitChunks: {
       layouts: true
     },
-    extend(config, ctx) {
+    extend( config, ctx ) {
       config.resolve.symlinks = false;
     }
   },
   hooks: {
-    "vue-renderer:ssr:context"(context) {
-      const routePath = JSON.stringify(context.nuxt.routePath);
+    "vue-renderer:ssr:context"( context ) {
+      const routePath = JSON.stringify( context.nuxt.routePath );
       context.nuxt = {
         serverRendered: true,
         routePath
       };
+    }
+  },
+  auth: {
+    strategies: {
+      user: {
+        scheme: "refresh",
+        token: {
+          property: "token",
+          required: true,
+          type: "Bearer",
+          maxAge: 1800
+        },
+        refreshToken: {
+          property: "token",
+          data: "token",
+          type: "Bearer",
+          maxAge: 1800
+        },
+        endpoints: {
+          login: {
+            url: "http://localhost:8080/api/auth/login",
+            method: "post"
+          },
+          refresh: {
+            url: "http://localhost:8080/api/auth/login",
+            method: "post"
+          },
+          logout: {
+            url: "http://localhost:8080/api/auth/logout",
+            method: "post"
+          },
+          user: {
+            url: "http://localhost:8080/api/auth/profile",
+            method: "get",
+            propertyName: false,
+            property: false,
+            autoFetch: false
+          }
+        },
+        autoLogout: true
+      },
     }
   }
 };
