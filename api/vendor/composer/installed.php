@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '2c2ee11727fe64e32f12d7ea66d27177deee343d',
+    'reference' => 'b4f2f27ab9215115e5ee8f3bc7b29909dc3f24ca',
     'name' => 'codeigniter4/appstarter',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '2c2ee11727fe64e32f12d7ea66d27177deee343d',
+      'reference' => 'b4f2f27ab9215115e5ee8f3bc7b29909dc3f24ca',
     ),
     'codeigniter4/framework' => 
     array (
@@ -161,12 +161,12 @@
     ),
     'phpspec/prophecy' => 
     array (
-      'pretty_version' => '1.12.2',
-      'version' => '1.12.2.0',
+      'pretty_version' => '1.13.0',
+      'version' => '1.13.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '245710e971a030f42e08f4912863805570f23d39',
+      'reference' => 'be1996ed8adc35c3fd795488a653f4b518be70ea',
     ),
     'phpunit/php-code-coverage' => 
     array (
@@ -215,12 +215,12 @@
     ),
     'phpunit/phpunit' => 
     array (
-      'pretty_version' => '9.5.2',
-      'version' => '9.5.2.0',
+      'pretty_version' => '9.5.4',
+      'version' => '9.5.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'f661659747f2f87f9e72095bb207bceb0f151cb4',
+      'reference' => 'c73c6737305e779771147af66c96ca6a7ed8a741',
     ),
     'psr/log' => 
     array (
